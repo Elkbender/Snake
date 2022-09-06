@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Snake.Classic" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:navigationBarColor">@color/monitor</item>
+        <item name="android:statusBarColor">@color/monitor</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.Snake.Colorful" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:navigationBarColor">@color/eburnean</item>
+        <item name="android:statusBarColor">@color/eburnean</item>
+        <item name="android:textColor">@color/smaragdine</item>
+    </style>
+</resources>

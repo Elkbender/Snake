@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="coquelicot">#FF3800</color>
+    <color name="monitor_dark">#FF2D321D</color>
+    <color name="eburnean">#FFFFEE</color>
+    <color name="fulvous">#E48400</color>
+    <color name="glaucous">#6082B5</color>
+    <color name="mikado">#FFC40C</color>
+    <color name="monitor">#8DA25A</color>
+    <color name="smaragdine">#4A9976</color>
+    <color name="wenge">#645452</color>
+    <color name="white">#FFFFFF</color>
+    <color name="xanadu">#738678</color>
+
+
+    <integer-array name="androidcolors">
+        <item>@color/coquelicot</item>
+        <item>@color/fulvous</item>
+        <item>@color/glaucous</item>
+        <item>@color/mikado</item>
+        <item>@color/wenge</item>
+        <item>@color/xanadu</item>
+    </integer-array>
+</resources>

@@ -18,7 +18,7 @@ import no.elkbender.snake.R
 
 @Composable
 fun GameScreen(gameEngine: GameEngine, score: Int, playerName: String) {
-    val state = gameEngine.state.collectAsState(initial = null)
+    val state = gameEngine.gameState.collectAsState(initial = null)
     val activity = LocalContext.current as GameActivity
     AppBar(
         title = stringResource(id = R.string.your_score, score),

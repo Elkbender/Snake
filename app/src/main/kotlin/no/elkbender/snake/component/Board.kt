@@ -20,12 +20,12 @@ import kotlin.math.abs
 
 @Composable
 fun Board(gameEngine: GameEngine) {
-    val state = gameEngine.state.collectAsState(initial = null).value ?: return
+    val state = gameEngine.gameState.collectAsState(initial = null).value ?: return
     BoxWithConstraints(Modifier.padding(padding16dp)) {
-        val tileSize = maxWidth / GameEngine.BOARD_SIZE
+        val tileSize = maxWidth / GameEngine.BOARD_WIDTH
         Box(
             Modifier
-                .size(maxWidth)
+                .size(maxWidth, maxWidth)
                 .pointerInput(Unit) {
                     detectDragGestures { change, dragAmount ->
                         change.consume()

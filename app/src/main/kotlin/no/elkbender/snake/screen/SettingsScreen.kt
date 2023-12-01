@@ -5,7 +5,9 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
@@ -47,6 +49,7 @@ fun SettingsScreen(navController: NavHostController? = null) {
     val dataStore = GameCache(context)
     val currentDifficulty = dataStore.getDifficulty.collectAsState(initial = 1).value
     val currentWrapAroundMode = dataStore.getDifficulty.collectAsState(initial = 0).value
+    val scrollState = rememberScrollState()
 
     AppBar(
         title = stringResource(R.string.title_settings),
@@ -60,7 +63,11 @@ fun SettingsScreen(navController: NavHostController? = null) {
                     start = padding16dp,
                     end = padding16dp
                 )
-                .border(width = border2dp, color = MaterialTheme.colorScheme.onBackground),
+                .border(width = border2dp, color = MaterialTheme.colorScheme.onBackground)
+                .verticalScroll(
+                    enabled = true,
+                    state = scrollState
+                ),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             PlayerName(navController)
@@ -109,11 +116,7 @@ fun PlayerName(navController: NavHostController? = null) {
     TextField(
         value = textFieldValue,
         onValueChange = { textFieldValue = it },
-        colors = TextFieldDefaults.textFieldColors(
-            containerColor = MaterialTheme.colorScheme.background,
-            textColor = MaterialTheme.colorScheme.onBackground,
-            cursorColor = MaterialTheme.colorScheme.onBackground,
-        ),
+        colors = TextFieldDefaults.colors(),
         singleLine = true,
         modifier = Modifier
             .focusRequester(focusRequester)

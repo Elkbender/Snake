@@ -18,7 +18,7 @@ fun AppBar(
     content: @Composable (padding: PaddingValues) -> Unit
 ) {
     Scaffold(topBar = {
-        SmallTopAppBar(
+        TopAppBar(
             title = { TitleLarge(text = title) },
             actions = {
                 if (playerName.isNotBlank())
